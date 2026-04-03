@@ -2,25 +2,25 @@
 
 include(CMakeFindDependencyMacro)
 
-find_path(FFTS_INCLUDE_DIR NAMES ffts/ffts.h
+find_path(PITCH_DETECTION_INCLUDE_DIR NAMES pitch_detection.h
     PATHS "${PACKAGE_PREFIX_DIR}/include"
     NO_DEFAULT_PATH)
-find_library(FFTS_LIBRARY_RELEASE NAMES ffts PATHS "${PACKAGE_PREFIX_DIR}/lib" NO_DEFAULT_PATH)
-find_library(FFTS_LIBRARY_DEBUG NAMES ffts PATHS "${PACKAGE_PREFIX_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(PITCH_DETECTION_LIBRARY_RELEASE NAMES pitch_detection PATHS "${PACKAGE_PREFIX_DIR}/lib" NO_DEFAULT_PATH)
+find_library(PITCH_DETECTION_LIBRARY_DEBUG NAMES pitch_detection PATHS "${PACKAGE_PREFIX_DIR}/debug/lib" NO_DEFAULT_PATH)
 
-if(NOT TARGET unofficial::ffts::ffts)
-    add_library(unofficial::ffts::ffts UNKNOWN IMPORTED)
-    set_target_properties(unofficial::ffts::ffts PROPERTIES
-        INTERFACE_INCLUDE_DIRECTORIES "${FFTS_INCLUDE_DIR}"
+if(NOT TARGET pitch_detection)
+    add_library(pitch_detection UNKNOWN IMPORTED)
+    set_target_properties(pitch_detection PROPERTIES
+        INTERFACE_INCLUDE_DIRECTORIES "${PITCH_DETECTION_INCLUDE_DIR}"
     )
 
-    if(FFTS_LIBRARY_RELEASE)
-        set_property(TARGET unofficial::ffts::ffts APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-        set_target_properties(unofficial::ffts::ffts PROPERTIES IMPORTED_LOCATION_RELEASE "${FFTS_LIBRARY_RELEASE}")
+    if(PITCH_DETECTION_LIBRARY_RELEASE)
+        set_property(TARGET pitch_detection APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+        set_target_properties(pitch_detection PROPERTIES IMPORTED_LOCATION_RELEASE "${PITCH_DETECTION_LIBRARY_RELEASE}")
     endif()
 
-    if(FFTS_LIBRARY_DEBUG)
-        set_property(TARGET unofficial::ffts::ffts APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-        set_target_properties(unofficial::ffts::ffts PROPERTIES IMPORTED_LOCATION_DEBUG "${FFTS_LIBRARY_DEBUG}")
+    if(PITCH_DETECTION_LIBRARY_DEBUG)
+        set_property(TARGET pitch_detection APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+        set_target_properties(pitch_detection PROPERTIES IMPORTED_LOCATION_DEBUG "${PITCH_DETECTION_LIBRARY_DEBUG}")
     endif()
 endif()

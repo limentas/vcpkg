@@ -1,4 +1,4 @@
-ffts provides CMake targets:
+sevagh-pitch-detection provides CMake targets:
 
-  find_package(unofficial-ffts CONFIG REQUIRED)
-  target_link_libraries(main PRIVATE unofficial::ffts::ffts)
+  find_package(sevagh-pitch-detection CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE pitch_detection)
