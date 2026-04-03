@@ -2,14 +2,6 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 5b27e3c..78d3952 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -260,7 +260,6 @@ message(STATUS "*** Looking for external libraries")
- ## Find LAPACK and BLAS libraries, or their optimised versions
- ##
- 
--set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake_aux/Modules/")
- 
- if(APPLE)
-   message(STATUS "Detected macOS")
 @@ -331,11 +330,16 @@ else()
      set(FlexiBLAS_FOUND false)
    endif()
