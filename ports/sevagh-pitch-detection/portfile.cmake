@@ -3,8 +3,8 @@ include(CMakePackageConfigHelpers)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO limentas/pitch-detection
-    REF "8edf3afd7b62b0ecf1264bd0c8e8857969a602f2"
-    SHA512 4f29c3cc17374c7ad0a7d9142e129df41b7eb640eef6cfdaff6161e898d85801f4f486e57a32ce978da09f95a3e77fd91eb0dde274257009c3ada7d01f13e076
+    REF "407c693809f127f71b85848e36848f45a5a29213"
+    SHA512 046420fdbcb669cb597b6a451b6c5c108235bee76ae8f57f9c8459761423e7f271ed79de540c83461d6d0d1cd664dd8dbfcf90ffcdeb9c58b89777d193afcbb9
     HEAD_REF master
 #    PATCHES
 #    fix-msvc-build.patch
