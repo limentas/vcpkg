@@ -14,7 +14,7 @@ index 5b27e3c..78d3952 100644
      set(FlexiBLAS_FOUND false)
    endif()
    
-+  if(0)
++  if(1)
    include(ARMA_FindMKL)
    include(ARMA_FindOpenBLAS)
    include(ARMA_FindATLAS)     # TODO: remove support for ATLAS in next major version
