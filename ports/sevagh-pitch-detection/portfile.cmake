@@ -3,8 +3,8 @@ include(CMakePackageConfigHelpers)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO limentas/pitch-detection
-    REF "4e1b50fb32b32138b55aec8c362a1244180ae43b"
-    SHA512 a2534ab06c5761416c1048d0fcba61b147847ff0379c2702390b807d11f8342f5fa012caff2de72eb2082315d6e05c75af56f7fa0e110d44481eb3d8a5235610
+    REF "5f4c683fece92fb160f3feeebdbed1a7637fd9f6"
+    SHA512 7360c113751fee43552ce0aa9e147283dc81dfbd6d5b65d37defbecded02d8968705ecb762c123ebaec9fa289ad26759e53fa20f8ec7dd1038e427fea79550fe
     HEAD_REF master
 
     # PATCHES
@@ -20,6 +20,7 @@ vcpkg_cmake_configure(
     OPTIONS
     -DCMAKE_INCLUDE_PATH=${CURRENT_PACKAGES_DIR}/include
     -DCMAKE_LIBRARY_PATH=${CURRENT_PACKAGES_DIR}/lib
+    -DBUILD_FOR_VCPKG=ON
 )
 
 vcpkg_cmake_install()
