@@ -7,10 +7,7 @@
   "license": "Apache-2.0",
   "dependencies": [
     "blas",
-    {
-      "name": "lapack",
-      "platform": "!android"
-    },
+    "lapack",
     {
       "name": "vcpkg-cmake",
       "host": true
